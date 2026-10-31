@@ -1,0 +1,24 @@
+import { test, expect } from '@playwright/test';
+import path from 'node:path';
+import { mkdirSync } from 'node:fs';
+test('recorrido grabado con movimiento, ahorro, educación y recarga', async ({ browser }) => {
+  const dir = path.resolve('../video'); mkdirSync(dir, { recursive: true });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: 'es-PE', recordVideo: { dir, size: { width: 390, height: 844 } } });
+  const page = await context.newPage(); await page.goto('http://localhost:8085/');
+  await expect(page.getByTestId('balance')).toHaveText('S/ 950.00'); await page.waitForTimeout(1200);
+  await page.getByRole('button', { name: 'Nuevo movimiento', exact: true }).click();
+  await page.getByLabel('Monto en soles', { exact: true }).fill('12.50');
+  await page.getByLabel('Descripción', { exact: true }).fill('Almuerzo de demostración'); await page.waitForTimeout(1000);
+  await page.getByRole('button', { name: 'Guardar movimiento', exact: true }).click();
+  await expect(page.getByTestId('balance')).toHaveText('S/ 937.50'); await page.waitForTimeout(1300);
+  await page.getByRole('button', { name: 'Ir a Actividad', exact: true }).click(); await page.waitForTimeout(1400);
+  await page.getByRole('button', { name: 'Ir a Mi plan', exact: true }).click();
+  await page.getByLabel('Reserva en soles', { exact: true }).fill('150');
+  await page.getByRole('button', { name: 'Guardar meta de ahorro', exact: true }).click();
+  await expect(page.getByText('Meta de ahorro guardada')).toBeVisible(); await page.waitForTimeout(1400);
+  await page.getByRole('button', { name: 'Ir a Análisis', exact: true }).click(); await page.waitForTimeout(1400);
+  await page.getByRole('button', { name: 'Ir a Aprende', exact: true }).click();
+  await page.getByRole('button', { name: 'Marcar lectura 01', exact: true }).click(); await page.waitForTimeout(1400);
+  await page.reload(); await expect(page.getByText('1 de 3 lecturas marcadas')).toBeVisible(); await page.waitForTimeout(1400);
+  const video = page.video(); await context.close(); await video?.saveAs(path.join(dir, 'demostracion.webm'));
+});

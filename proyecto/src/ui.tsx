@@ -1,0 +1,9 @@
+import React from 'react';
+import { Pressable, Text, View, TextInput, type TextInputProps } from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import { s, palette } from './styles';
+export function Icon({ name, color = palette.green, size = 19 }: { name: React.ComponentProps<typeof Feather>['name']; color?: string; size?: number }) { return <Feather name={name} size={size} color={color} />; }
+export function Button({ title, onPress, secondary = false, icon, accessibilityLabel }: { title: string; onPress: () => void; secondary?: boolean; icon?: React.ComponentProps<typeof Feather>['name']; accessibilityLabel?: string }) { return <Pressable accessibilityRole="button" accessibilityLabel={accessibilityLabel || title} onPress={onPress} style={[s.button, secondary && s.secondary]}>{icon && <Icon name={icon} size={17} color={secondary ? palette.green : '#fff'}/>}<Text style={[s.buttonText, secondary && s.secondaryText]}>{title}</Text></Pressable>; }
+export function Card({ title, children, right }: { title: string; children: React.ReactNode; right?: React.ReactNode }) { return <View testID={'card-' + title} style={s.card}><View style={s.between}><Text style={s.cardTitle}>{title}</Text>{right}</View>{children}</View>; }
+export function Field({ label, ...props }: TextInputProps & { label: string }) { return <View style={s.field}><Text style={s.label}>{label}</Text><TextInput accessibilityLabel={label} placeholderTextColor="#9aa9a3" style={s.input} {...props}/></View>; }
+export function Progress({ used, limit, color }: { used: number; limit: number; color: string }) { return <View style={s.progress}><View style={[s.progressFill, { width: (limit ? Math.min(100, used / limit * 100) : 0) + '%' as `${number}%`, backgroundColor: limit > 0 && used > limit ? '#d86a5f' : color }]}/></View>; }

@@ -1,0 +1,15 @@
+**/node_modules/
+**/.expo/
+**/dist/
+**/.cache/
+**/.DS_Store
+**/playwright/.cache/
+documentacion/guia_render/
+documentacion/plantilla_render/
+documentacion/informe_render*/
+evidencias/pruebas/artefactos/
+*.log
+*.webm
+.env
+.env.*
+!.env.example
