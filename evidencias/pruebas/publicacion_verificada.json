@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/alexisBltz/lab05-PE",
+  "application": "https://alexisbltz.github.io/lab05-PE/",
+  "verifiedAt": "2026-10-31T18:20:42.151Z",
+  "repositoryHttp": 200,
+  "applicationHttp": 200,
+  "navigation": "passed",
+  "persistence": "passed",
+  "browserErrors": []
+}

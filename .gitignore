@@ -9,6 +9,8 @@ documentacion/plantilla_render/
 documentacion/informe_render*/
 evidencias/pruebas/artefactos/
 *.log
+**/__pycache__/
+*.pyc
 *.webm
 .env
 .env.*

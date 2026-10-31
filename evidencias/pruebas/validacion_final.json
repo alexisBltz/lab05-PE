@@ -1,0 +1,59 @@
+{
+  "estado": "correcto",
+  "paginas_revisadas": 20,
+  "figuras_docx": 12,
+  "tablas_cuerpo": 7,
+  "indices_word": 3,
+  "plantilla_original_sha256": "3113082634B297AFA12CBE8881752043FA3F2DF0D40A4273FB6411046D921895",
+  "logos_originales_preservados": true,
+  "capturas": {
+    "01_inicio.png": [
+      390,
+      844
+    ],
+    "02_registro.png": [
+      390,
+      844
+    ],
+    "03_actividad.png": [
+      390,
+      844
+    ],
+    "04_plan.png": [
+      390,
+      844
+    ],
+    "05_meta_ahorro.png": [
+      350,
+      489
+    ],
+    "06_analisis.png": [
+      390,
+      844
+    ],
+    "07_aprende.png": [
+      390,
+      844
+    ],
+    "08_persistencia.png": [
+      390,
+      844
+    ],
+    "09_escritorio.png": [
+      1440,
+      900
+    ],
+    "10_publicada.png": [
+      390,
+      844
+    ],
+    "11_persistencia_codigo.png": [
+      1200,
+      800
+    ]
+  },
+  "pruebas_aprobadas": 5,
+  "video_segundos": 12.88,
+  "publicacion_http": 200,
+  "informe_sha256": "f9980cfe2691a9f5ee8857190e19ccefff2895493595c5a620ac24e086b81235"
+}

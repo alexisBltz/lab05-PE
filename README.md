@@ -50,7 +50,7 @@ informe/                  documento DOCX basado en la plantilla
 video/                    demostración MP4
 ```
 
-Los enlaces públicos verificados se registran en `ENLACES_PUBLICOS.md` después de publicar. La guía oficial fue utilizada como referencia académica; no se atribuyen a la aplicación entrevistas ni resultados de campo no realizados.
+Aplicación pública: **https://alexisbltz.github.io/lab05-PE/**. Repositorio: **https://github.com/alexisBltz/lab05-PE**. El informe se encuentra en [informe/LAB05_INFORME_FINAL.docx](informe/LAB05_INFORME_FINAL.docx). Los enlaces y su comprobación se registran en `ENLACES_PUBLICOS.md`. La guía oficial fue utilizada como referencia académica; no se atribuyen a la aplicación entrevistas ni resultados de campo no realizados.
 
 ## Fuentes educativas
 
